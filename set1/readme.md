@@ -5,5 +5,4 @@ Feeling more confident with github tools. It was a bit confusing to get my head 
 trinket spaceship: 
 https://trinket.io/python/ce0d72004a
 
-WK 2 
 
