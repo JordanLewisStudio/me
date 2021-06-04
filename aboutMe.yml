@@ -2,7 +2,7 @@ name: Your Name
 studentNumber: z5338414
 officialEmail: jordan.a.lewis@unsw.edu.au
 contactEmail: # don't write on this line
-  firstBit: jordanlewisstudio # this avoids spam, the @ is implied
+  firstBit: jordanlewisstudio
   otherBit: gmail.com
 # accounts
 stackOverflowLink: https://stackoverflow.com/users/16123008/jordan-lewis
