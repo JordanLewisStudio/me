@@ -7,7 +7,10 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    if a_number % 2 == 1:
+        return True
+    else:
+        return False
 
 
 def fix_it(moves=True, should_move=True):
@@ -25,7 +28,15 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+
+    if moves and should_move:
+        return "No Problem"
+    elif moves and not should_move:
+        return "Duct Tape"
+    elif not moves and not should_move:
+        return "No Problem"
+    elif not moves and should_move:
+        return "WD-40"
 
 
 def loops_1a():
@@ -35,7 +46,10 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    stars = []
+    for i in range(10):
+        stars.append("*")
+    return stars
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -45,7 +59,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    answer = []
+    for i in range(number_of_items):
+        answer.append(symbol)
+    return answer
 
 
 def loops_2():
@@ -66,7 +83,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    star_square = []
+    for j in range(10):
+        star_list = []
+        for i in range(10):
+            star_list.append("*")
+        star_square.append(star_list)
+
+    return star_square
 
 
 def loops_3():
@@ -90,7 +114,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    number = []
+    for j in range(10):
+        row = []
+        for i in range(10):
+            row.append(str(j))
+        number.append(row)
+
+    return number
 
 
 def loops_4():
@@ -110,7 +141,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numbers = []
+    for i in range(10):
+        row = []
+        for j in range(10):
+            row.append(j)
+        numbers.append(row)
+    return numbers
 
 
 def loops_5():
