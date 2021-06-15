@@ -25,7 +25,7 @@ def fix_it(moves=True, should_move=True):
     "Duct Tape"
     "No Problem"
 
-    Most people write this function with 4 return statements. 
+    Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
 
@@ -174,7 +174,14 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    number = []
+    for i in range(10):
+        row = []
+        for j in range(5):
+            row.append('(i{}, j{})' .format(i, j))
+        number.append(row)
+
+    return number
 
 
 def loops_6():
@@ -197,7 +204,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    numbers = []
+
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(j)
+        numbers.append(row)
+    return numbers
 
 
 def loops_7():
@@ -221,7 +235,23 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+
+    pyramid = []
+    space = 4
+    num = 1
+    for i in range(5):
+        row = []
+        for j in range(space):
+            row.append(" ")
+        for x in range(num):
+            row.append("*")
+        for f in range(space):
+            row.append(" ")
+        space -= 1
+        num += 2
+        pyramid.append(row)
+
+    return pyramid
 
 
 def little_printer(some_kind_of_list, exercise_name):
