@@ -178,7 +178,7 @@ def loops_5():
     for i in range(10):
         row = []
         for j in range(5):
-            row.append('(i{}, j{})' .format(i, j))
+            row.append("(i{}, j{})".format(i, j))
         number.append(row)
 
     return number
