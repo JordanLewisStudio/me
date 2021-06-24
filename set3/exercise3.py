@@ -26,6 +26,13 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
+    print("Welcome to thaa game")
+    print("enter a number between 10 and 20 plz")
+    guess = input("")
+    if len(guess) > 0 and guess.isalpha() and guess == range(10, 20):
+        print("nice! now enter another number")
+        second_guess = input("")
+
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
