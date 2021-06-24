@@ -27,15 +27,52 @@ def advancedGuessingGame():
     """
 
     print("Welcome to thaa game")
-    print("enter a number between 10 and 20 plz")
-    guess = input("")
-    if len(guess) > 0 and guess.isalpha() and guess == range(10, 20):
-        print("nice! now enter another number")
-        second_guess = input("")
+    print("enter a number plz")
+    lower_number = False
+    while not lower_number:
+        lower = input("Enter a lower number: ")
+        try:
+            lower = int(lower)
+            print(f"A number between {lower_number} and _ ?")
+            lower_number = True
+        except:
+            print("enter a REAL number")
+    higher_number = False
+    while not higher_number:
+        higher = input("Enter a higher number: ")
+        try:
+            higher = int(higher)
+            if lower < higher:
+                print(f"Enter a number between {lower} and {higher}")
+                higher = True
+            elif lower > higher:
+                print("I need a larger number")
+            elif lower == higher:
+                print("numbers are the same, enter again")
+        except:
+            print("enter a REAL number")
 
+    actualNumber = random.randint(lower, higher)
+
+    guessed = False
+
+    while not guessed:
+        try:
+            guessedNumber = input("Guess a number: ")
+            guessedNumber = int(guessedNumber)
+            print("You guessed {},".format(guessedNumber),)
+            if guessedNumber == actualNumber:
+                print("You got it!! It was {}".format(actualNumber))
+                guessed = True
+            elif guessedNumber < actualNumber:
+                print("Too small, try again :'(")
+            else:
+                print("Too big, try again :'(")
+        except:
+            print("{} thats not a number!!!! Give me a number!!!".format(guessedNumber))
     return "You got it!"
+
+
     # the tests are looking for the exact string "You got it!". Don't modify that!
-
-
 if __name__ == "__main__":
     print(advancedGuessingGame())
