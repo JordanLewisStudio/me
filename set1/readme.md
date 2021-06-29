@@ -5,4 +5,4 @@ Feeling more confident with github tools. It was a bit confusing to get my head 
 trinket spaceship: 
 https://trinket.io/python/ce0d72004a
 
-
+Hoping to do some more readings on how to use coding in a creative format. 
