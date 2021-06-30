@@ -26,52 +26,29 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
-    print("Welcome to thaa game")
-    print("enter a number plz")
-    lower_number = False
-    while not lower_number:
-        lower = input("Enter a lower number: ")
-        try:
-            lower = int(lower)
-            print(f"A number between {lower_number} and _ ?")
-            lower_number = True
-        except:
-            print("enter a REAL number")
-    higher_number = False
-    while not higher_number:
-        higher = input("Enter a higher number: ")
-        try:
-            higher = int(higher)
-            if lower < higher:
-                print(f"Enter a number between {lower} and {higher}")
-                higher = True
-            elif lower > higher:
-                print("I need a larger number")
-            elif lower == higher:
-                print("numbers are the same, enter again")
-        except:
-            print("enter a REAL number")
+    print("\nWelcome to thaaa guessing game!")
+    lower_bound = input("Enter a lower bound: ")
+    upperBound = input("Enter an upper bound: ")
+    print("A number between {} and {} ?".format(lower_bound, upperBound))
+    print("OK then, a number between {} and {} ?".format(lower_bound, upperBound))
+    upperBound = int(upperBound)
+    lower_bound = int(lower_bound)
 
-    actualNumber = random.randint(lower, higher)
+    actualNumber = random.randint(lower_bound, upperBound)
 
     guessed = False
 
     while not guessed:
-        try:
-            guessedNumber = input("Guess a number: ")
-            guessedNumber = int(guessedNumber)
-            print("You guessed {},".format(guessedNumber),)
-            if guessedNumber == actualNumber:
-                print("You got it!! It was {}".format(actualNumber))
-                guessed = True
-            elif guessedNumber < actualNumber:
-                print("Too small, try again :'(")
-            else:
-                print("Too big, try again :'(")
-        except:
-            print("{} thats not a number!!!! Give me a number!!!".format(guessedNumber))
+        guessednumber = int(input("Guess a number: "))
+        print("You guessed {},".format(guessednumber),)
+        if guessednumber == actualNumber:
+            print("You got it!! It was {}".format(actualNumber))
+            guessed = True
+        elif guessednumber < actualNumber:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
     return "You got it!"
-
 
     # the tests are looking for the exact string "You got it!". Don't modify that!
 if __name__ == "__main__":
