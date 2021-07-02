@@ -141,13 +141,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    numbers = []
+    number = []
     for i in range(10):
         row = []
         for j in range(10):
             row.append(j)
-        numbers.append(row)
-    return numbers
+        number.append(row)
+    print(number)
+
+    return number
 
 
 def loops_5():

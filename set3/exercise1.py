@@ -48,16 +48,18 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
 
-    # stuck on this one
-    the_answer = []
-    while True:
-        number = int(
-            input("Give me a number between {low}, and {high}").format(
-                low=low, high=high
-            )
-        )
-        if low <= number <= 100:
-            low
+    x = int(input("enter a number: "))
+    while not(low < x < high):
+        if x < low:
+            print("Number is too low")
+        elif x > high:
+            print("Number is too high")
+        elif x > low and x < high:
+            print("Number is correct")
+            return x
+        x = int(input("enter a number: "))
+    print(x)
+    return x
 
 
 def not_number_rejector(message):
@@ -67,15 +69,16 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    the_answer = []
-    while True:
-        i = input(message)
+    number_only = False
+    while number_only == False:
+        give_me = input("enter a number: ")
         try:
-            i / 2
-            print(f"{i} is a number")
-            return the_answer
-        except:
-            print("wrong number")
+            give_me_number_only = int(give_me_number_only)
+            print(str(give_me_number_only) + "is an integer!")
+            return give_me_number_only
+        except Exception as e:
+            print(give_me + "is an integer!")
+    return number_only
 
 
 def super_asker(low, high):

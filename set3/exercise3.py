@@ -27,8 +27,11 @@ def advancedGuessingGame():
     """
 
     print("\nWelcome to thaaa guessing game!")
-    lower_bound = input("Enter a lower bound: ")
-    upperBound = input("Enter an upper bound: ")
+    try:
+        lower_bound = value = int(input("Enter a lower bound: "))
+        upperBound = value = int(input("Enter an upper bound: "))
+    except ValueError:
+        print("this is not a number")
     print("A number between {} and {} ?".format(lower_bound, upperBound))
     print("OK then, a number between {} and {} ?".format(lower_bound, upperBound))
     upperBound = int(upperBound)
@@ -39,18 +42,23 @@ def advancedGuessingGame():
     guessed = False
 
     while not guessed:
-        guessednumber = int(input("Guess a number: "))
-        print("You guessed {},".format(guessednumber),)
-        if guessednumber == actualNumber:
-            print("You got it!! It was {}".format(actualNumber))
-            guessed = True
-        elif guessednumber < actualNumber:
-            print("Too small, try again :'(")
-        elif ValueError:
-            print("Please enter a number :'(")
-        else:
-            print("Too big, try again :'(")
+        try:
+            guessednumber = int(input("Guess a number: "))
+            print("You guessed {},".format(guessednumber),)
+        except ValueError:
+            print("this is not a number")
+            if guessednumber == actualNumber:
+                print("You got it!! It was {}".format(actualNumber))
+                guessed = True
+            elif guessednumber < actualNumber:
+                print("Too small, try again :'(")
+            elif guessednumber > actualNumber:
+                print("Too big, try again :'(")
+            else:
+                print("That is not a number")
+
     return "You got it!"
+
 
     # the tests are looking for the exact string "You got it!". Don't modify that!
 if __name__ == "__main__":

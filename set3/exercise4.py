@@ -3,6 +3,7 @@
 
 
 import math
+import time
 
 # import time
 
@@ -26,10 +27,24 @@ def binary_search(low, high, actual_number):
     """
     tries = 0
     guess = 0
+    guessed = False
+    lowest = low
+    highest = high
 
-    # Write your code in here
+    while not guessed:
+        guessed_number = round((lowest + highest) / 2)
+        print("You guessed {}!".format(guessed_number))
+        if guessed_number == actual_number:
+            guessed = True
+        elif guessed_number > actual_number:
+            highest = guessed_number + 1
+        elif guessed_number < actual_number:
+            lowest = guessed_number + 1
+        tries += 1
 
     return {"guess": guess, "tries": tries}
+
+    # Write your code in here
 
 
 if __name__ == "__main__":
