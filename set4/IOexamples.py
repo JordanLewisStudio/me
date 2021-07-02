@@ -33,6 +33,13 @@ def be_cool_for_ever(name, file_path):
     history_book.close()
 
 
+def be_cool_and_safe_for_ever(name, file_path):
+
+    mode = "w"
+    with open(file_path, mode, encoding="utf-8") as history_book:
+        history_book.write(name + " is cool and safe")
+
+
 # look up what '..' means
 be_cool_for_ever("Ben", "../ben_is_cool.txt")
 be_cool_for_ever("Ben", "ben_is_cool.lol_UR_joking")

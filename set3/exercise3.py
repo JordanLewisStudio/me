@@ -46,6 +46,8 @@ def advancedGuessingGame():
             guessed = True
         elif guessednumber < actualNumber:
             print("Too small, try again :'(")
+        elif ValueError:
+            print("Please enter a number :'(")
         else:
             print("Too big, try again :'(")
     return "You got it!"
