@@ -27,11 +27,8 @@ def advancedGuessingGame():
     """
 
     print("\nWelcome to thaaa guessing game!")
-    try:
-        lower_bound = value = int(input("Enter a lower bound: "))
-        upperBound = value = int(input("Enter an upper bound: "))
-    except ValueError:
-        print("this is not a number")
+    lower_bound = value = int(input("Enter a lower bound: "))
+    upperBound = value = int(input("Enter an upper bound: "))
     print("A number between {} and {} ?".format(lower_bound, upperBound))
     print("OK then, a number between {} and {} ?".format(lower_bound, upperBound))
     upperBound = int(upperBound)

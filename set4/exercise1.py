@@ -153,16 +153,20 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+
     mode = "r"
     count = 0
     with open("me/set4/Trispokedovetiles(laser).gcode", mode, encoding="utf-8") as gc:
         lines = gc.readlines()
 
     for line in lines:
-        if lines[:2] == "M10":
+        if "M10 P1" in line:
             count += 1
-        print(line)
+
     print(count)
+    laser = open("me/set4/lasers.pew", mode="w+")
+    laser.write(str(count))
+    laser.close
 
 
 if __name__ == "__main__":

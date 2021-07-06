@@ -4,6 +4,7 @@
 
 import math
 import time
+import random
 
 # import time
 
@@ -30,6 +31,7 @@ def binary_search(low, high, actual_number):
     guessed = False
     lowest = low
     highest = high
+    actual_number = random.randint(0, 100)
 
     while not guessed:
         guessed_number = round((lowest + highest) / 2)
