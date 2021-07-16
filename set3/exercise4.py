@@ -28,25 +28,25 @@ def binary_search(low, high, actual_number):
     """
     tries = 0
     guess = 0
-    guessed = False
-    lowest = low
-    highest = high
-    actual_number = random.randint(0, 100)
+    Found = False
 
-    while not guessed:
-        guessed_number = round((lowest + highest) / 2)
-        print("You guessed {}!".format(guessed_number))
-        if guessed_number == actual_number:
-            guessed = True
-        elif guessed_number > actual_number:
-            highest = guessed_number + 1
-        elif guessed_number < actual_number:
-            lowest = guessed_number + 1
-        tries += 1
+    while high >= low and Found is False:
+        middle = (low + high) // 2
+        print(f"You guessed {middle}!")
+        if actual_number < middle:
+            high = middle - 1
+            tries += 1
+        elif actual_number == middle:
+            Found = True
+        else:
+            low = middle + 1
+            tries += 1
+    if Found is True:
+        print("Found")
+    else:
+        print("Not Found")
 
-    return {"guess": guess, "tries": tries}
-
-    # Write your code in here
+    return {"guess": middle, "tries": tries}
 
 
 if __name__ == "__main__":

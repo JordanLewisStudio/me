@@ -6,6 +6,17 @@ Steps on the way to making your own guessing game.
 import random
 
 
+def super_asker(low, high, message):
+    while True:
+        try:
+            ask_for_number = int(input(message))
+            print(f"{ask_for_number} is a number")
+            if low < ask_for_number < high:
+                return ask_for_number
+        except Exception as e:
+            print(f"{e} is not a number")
+
+
 def advancedGuessingGame():
     """Play a guessing game with a user.
 
@@ -26,36 +37,28 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
-    print("\nWelcome to thaaa guessing game!")
-    lower_bound = value = int(input("Enter a lower bound: "))
-    upperBound = value = int(input("Enter an upper bound: "))
-    print("A number between {} and {} ?".format(lower_bound, upperBound))
-    print("OK then, a number between {} and {} ?".format(lower_bound, upperBound))
-    upperBound = int(upperBound)
-    lower_bound = int(lower_bound)
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
 
-    actualNumber = random.randint(lower_bound, upperBound)
+    lowerBound = super_asker(-1000, 1000, "Enter a lower bound: ")
+    upperBound = super_asker(lowerBound + 1, 1000, "Enter an upper bound: ")
 
-    guessed = False
+    actualNumber = random.randint(lowerBound + 1, upperBound - 1)
 
-    while not guessed:
-        try:
-            guessednumber = int(input("Guess a number: "))
-            print("You guessed {},".format(guessednumber),)
-        except ValueError:
-            print("this is not a number")
-            if guessednumber == actualNumber:
-                print("You got it!! It was {}".format(actualNumber))
-                guessed = True
-            elif guessednumber < actualNumber:
-                print("Too small, try again :'(")
-            elif guessednumber > actualNumber:
-                print("Too big, try again :'(")
-            else:
-                print("That is not a number")
-
-    return "You got it!"
-
+    while True:
+        guessedNumber = super_asker(
+            lowerBound,
+            upperBound,
+            f"Guess a number between {lowerBound} and {upperBound}: ",
+        )
+        print("The number you guessed is {},".format(guessedNumber))
+        if guessedNumber == actualNumber:
+            print("You guessed it!! It was {}".format(actualNumber))
+            return "You got it!"
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        elif guessedNumber > actualNumber:
+            print("Too big, try again :'(")
 
     # the tests are looking for the exact string "You got it!". Don't modify that!
 if __name__ == "__main__":
