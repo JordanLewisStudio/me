@@ -26,8 +26,11 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
+    the_answer = []
 
-    return range(start, stop, step)
+    for i in range(start, stop, step):
+        the_answer.append(i)
+    return the_answer
 
 
 def two_step_ranger(start, stop):
@@ -36,7 +39,12 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return range(start, stop, 2)
+
+    the_answer = []
+
+    for i in range(start, stop, 2):
+        the_answer.append(i)
+    return the_answer
 
 
 def stubborn_asker(low, high):
@@ -69,16 +77,13 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    number_only = False
-    while number_only == False:
-        give_me = input("enter a number: ")
+    while True:
         try:
-            give_me_number_only = int(give_me_number_only)
-            print(str(give_me_number_only) + "is an integer!")
-            return give_me_number_only
+            ask_for_number = int(input(message))
+            print("{} is a number".format(ask_for_number))
+            return ask_for_number
         except Exception as e:
-            print(give_me + "is an integer!")
-    return number_only
+            print("{} is not a number".format(e))
 
 
 def super_asker(low, high):
@@ -89,6 +94,16 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
+    while True:
+        try:
+            ask_for_number = int(input("Enter a number plz: "))
+            print("{} is a number".format(ask_for_number))
+            if low < ask_for_number < high:
+                print(f"{ask_for_number} is in range")
+                return ask_for_number
+        except Exception as e:
+            print(f"{e} is not a number")
+
     return None
 
 
