@@ -104,8 +104,6 @@ def super_asker(low, high):
         except Exception as e:
             print(f"{e} is not a number")
 
-    return None
-
 
 if __name__ == "__main__":
     # this section does a quick test on your results and prints them nicely.

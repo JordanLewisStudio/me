@@ -34,7 +34,7 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
+    
     data = json.loads(json_data)
 
     last = data["results"][0]["name"]["last"]
